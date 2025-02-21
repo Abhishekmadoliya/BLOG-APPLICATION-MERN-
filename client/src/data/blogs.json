@@ -1,0 +1,37 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "The Beauty of Nature",
+      "description": "Exploring the stunning landscapes, wildlife, and the calming effects of nature in our lives.",
+      "image": "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg", 
+      "author": { "name": "John Doe", "email": "john.doe@example.com" },
+      "created_at": "2025-01-07T10:30:00Z",
+      "updated_at": "2025-01-07T10:30:00Z",
+      "categories": ["Nature", "Travel"],
+      "tags": ["nature", "travel", "landscapes"]
+    },
+    {
+      "id": 2,
+      "title": "Top 10 Coding Practices for Developers",
+      "description": "Discover the best coding practices that can help you write clean, efficient, and maintainable code.",
+      "image": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg", 
+      "author": { "name": "Jane Smith", "email": "jane.smith@example.com" },
+      "created_at": "2025-01-06T14:00:00Z",
+      "updated_at": "2025-01-06T14:00:00Z",
+      "categories": ["Coding", "Programming"],
+      "tags": ["coding", "best practices", "development"]
+    },
+    {
+      "id": 3,
+      "title": "Healthy Eating Habits for a Better Life",
+      "description": "Learn how to adopt healthy eating habits and improve your overall well-being with simple tips and recipes.",
+      "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg", 
+      "author": { "name": "Emily Davis", "email": "emily.davis@example.com" },
+      "created_at": "2025-01-05T09:45:00Z",
+      "updated_at": "2025-01-05T09:45:00Z",
+      "categories": ["Health", "Lifestyle"],
+      "tags": ["health", "nutrition", "recipes"]
+    }
+  ]
+}

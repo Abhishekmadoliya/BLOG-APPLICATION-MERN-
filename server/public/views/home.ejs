@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging </title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>BlogMaster</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero">
+            <h2>Welcome to BlogMaster</h2>
+            <p>Your go-to place for insightful articles and stories.</p>
+            <a href="#featured" class="cta-button">Explore Blog Posts</a>
+        </div>
+    </header>
+
+    <!-- Featured Blog Posts Section -->
+    <section id="featured" class="featured-posts">
+        <div class="container">
+            <h2 class="section-title">Featured Blog Posts</h2>
+            <div class="posts">
+
+
+
+
+
+
+                <% blogs.forEach(blog=> { %>
+                    <div class="post-card">
+
+                        <img src="<%= blog.image || 'https://images.pexels.com/photos/29254313/pexels-photo-29254313/free-photo-of-misty-autumn-birch-forest-in-hamburg.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' %>"
+                            alt="<%= blog.title %>" onerror="this.src='../images/blog-defaul-img.jpeg'">
+
+                        <h3>
+                            <%= blog.title %>
+                        </h3>
+                        <p id="description">
+                            <%= blog.description %>
+                        </p>
+                        <a href="/blog/<%= blog.id %>">Read More</a>
+                    </div>
+                    <% }) %>
+
+            </div>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>BlogMaster</h2>
+                <p>&copy; 2025 BlogMaster. All rights reserved.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

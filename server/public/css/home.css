@@ -1,0 +1,351 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 20px;
+    color: white;
+}
+
+.navbar .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .cta-button {
+    background-color: #fff;
+    color: #2575fc;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Featured Posts Section */
+.featured-posts {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.posts {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.post-card {
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 32%;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.post-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.post-card h3 {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.post-card p {
+    font-size: 16px;
+    margin: 0 15px 15px;
+}
+
+.post-card a {
+    display: inline-block;
+    margin: 0 15px 15px;
+    text-decoration: none;
+    color: #2575fc;
+    font-weight: bold;
+}
+
+.post-card:hover {
+    transform: translateY(-10px);
+}
+
+#description {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Main Blog Container */
+.main-blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+/* Blog Card */
+.blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+/* Blog Image */
+.blog-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Blog Content */
+.blog-content {
+    padding: 20px;
+}
+
+.blog-category {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.blog-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.blog-title:hover {
+    color: #2575fc;
+    /* Color on hover */
+}
+
+.blog-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Blog Meta Info (Author and Date) */
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.blog-author {
+    font-weight: bold;
+}
+
+.blog-date {
+    color: #aaa;
+}
+
+/* Read More Link */
+.read-more {
+    display: inline-block;
+    font-size: 16px;
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #6a11cb;
+    /* Hover color */
+}
+
+/* Hover effect for blog cards */
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-blog-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-card {
+        margin: 10px;
+    }
+}
+
+*/
+
+/* Footer Section */
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Spacing around the footer */
+    text-align: center; /* Center-align text */
+  }
+  
+  .footer-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Vertically align items */
+    max-width: 1200px; /* Set a max width for the footer */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Add padding for smaller screens */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  }
+  
+  .footer-logo {
+    text-align: left;
+    flex: 1; /* Take up available space */
+    min-width: 250px; /* Ensure logo has enough space */
+  }
+  
+  .footer-logo h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  
+  .footer-logo p {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  footer nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display links in a row */
+    gap: 20px; /* Add space between links */
+    flex-wrap: wrap; /* Wrap links on smaller screens */
+    justify-content: center; /* Center links on smaller screens */
+  }
+  
+  footer nav ul li {
+    margin: 0;
+  }
+  
+  footer nav ul li a {
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  footer nav ul li a:hover {
+    color: #00bcd4; /* Change text color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center-align text */
+    }
+  
+    .footer-logo {
+      margin-bottom: 20px; /* Add spacing between logo and links */
+    }
+  }
+  

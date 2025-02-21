@@ -1,0 +1,25 @@
+#header-image{
+    width: 70px;
+}
+
+
+.navigation{
+    background: #5f5d5d;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 100px;
+    
+}
+
+.header-right{
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 5px;
+    
+}
+.header-right a{
+    color: aliceblue;
+}

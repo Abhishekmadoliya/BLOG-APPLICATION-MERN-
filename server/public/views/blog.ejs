@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="../css/blog.css">
+  
+</head>
+<body>
+    <dsiv class="container">
+        <div class="blog">
+
+            <h2><%= blogData.title %></h2>
+            <img src="<%= blogData.image %>" alt="">
+            <div id="description">
+
+                <p><%= blogData.description %></p>
+            </div>
+            <p id="author"><%= blogData.author %></p>
+            <!-- <pre></pre> -->
+            
+        </div>
+        
+        <div class="deletion">
+            <form action="/delete/<%= blogData._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Blog</button>
+            </form>
+
+            <a href="/">Home</a>
+        </div>
+
+
+        
+    </dsiv>
+</body>
+</html>
