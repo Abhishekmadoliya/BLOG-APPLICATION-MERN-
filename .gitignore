@@ -1,0 +1,40 @@
+### Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+### Environment variables
+.env
+.env.local
+
+### Logs
+logs/
+*.log
+
+### Build files
+dist/
+build/
+
+### Database files
+*.sqlite
+*.sqlite3
+
+### Temporary files
+*.tmp
+*.cache
+.DS_Store
+
+### Editor & OS-specific files
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+
+### Multer & File Uploads (if using Multer for file uploads)
+uploads/
+public/uploads/
+
+### React build files (if deploying separately)
+client/node_modules/
+client/build/
+client/.env
