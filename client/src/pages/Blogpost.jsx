@@ -31,6 +31,7 @@ function Blogpost() {
   
   return (
     <div className="main-container">
+      <h1>blogposts route</h1>
       <div className="main-left">
         <div className="search-input">
           <p>For you</p>

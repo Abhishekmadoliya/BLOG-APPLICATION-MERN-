@@ -35,6 +35,7 @@ const Newblog = () => {
   };
   return (
     <div className="form-container">
+      <h1>new route</h1> 
     <form id="submission-form" onSubmit={handleSubmit(onSubmit)}>
       <div className="form-group">
         <label htmlFor="title">Title:</label>

@@ -32,6 +32,7 @@ const Blogbyid = () => {
 
   return (
     <div className="parent">
+      <h1>blog post by id</h1>
 
         <div className="main">
         <h2>{blogpost.title}</h2>
