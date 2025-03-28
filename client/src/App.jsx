@@ -15,7 +15,7 @@ import Blogbyid from "./pages/Blogbyid";
 function App() {
 
   return (
-    <div className="app">
+    <div className="">
       {/* <Header /> */}
     
       <main>
