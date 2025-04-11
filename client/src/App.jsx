@@ -26,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Signup />} />
           <Route path="/post/:id" element={<Blogbyid />} />
+          
           {/* <Route path="/:user/dashboard" element={<Dashboard  />}  />
           <Route path="/:user/new" element={<Blogform />} /> */}
         </Routes>
@@ -35,3 +36,6 @@ function App() {
 }
 
 export default App;
+
+
+// check the newblog page
