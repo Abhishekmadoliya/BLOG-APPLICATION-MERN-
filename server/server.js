@@ -4,6 +4,9 @@ const blogRoutes = require ("./routes/blogroutes.js"); // ✅ Ensure correct pat
 const cors = require("cors")
 const authRoutes = require("./routes/auth.js");
 const app = express();
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 app.use(express.json()); // ✅ Middleware for JSON data
 app.use(cors())
