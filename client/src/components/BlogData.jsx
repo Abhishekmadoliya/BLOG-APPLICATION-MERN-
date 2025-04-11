@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FiClock, FiUser, FiArrowRight } from "react-icons/fi";
 
-const Blogdata = () => {
+const BlogData = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -190,5 +190,5 @@ const Blogdata = () => {
   );
 };
 
-export default Blogdata;
+export default BlogData;
 

@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Blogdata from "./components/Blogdata";
+import BlogData from "./components/Blogdata";
 // import Header from "./components/Header";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -24,7 +24,7 @@ function App() {
     
       <main>
         <Routes>
-          <Route path="/" element={<Blogdata />} />
+          <Route path="/" element={<BlogData />} />
           <Route path="/new" element={<Newblog />} />
           <Route path="/blogs" element={< Blogpost/>} />
           <Route path="/login" element={<Login />} />
