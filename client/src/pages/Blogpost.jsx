@@ -1,4 +1,4 @@
-import { TextInput, Card, Image, Text, Badge, Group } from '@mantine/core';
+import { TextInput, Card, Image, Text, Badge, Group, Button } from '@mantine/core';
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -8,14 +8,20 @@ import "./Blogpost.css";
 function Blogpost() {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState("All");
+  // const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
         const response = await axios.get("http://localhost:3000/blogs/");
-        setBlog(response.data);
+        const sortedBlogs = response.data.sort((a, b) => 
+          new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        setBlog(sortedBlogs);
+        setFilteredBlogs(sortedBlogs);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching blogs:", error);
@@ -25,7 +31,43 @@ function Blogpost() {
     fetchBlogs();
   }, []);
 
-  const categories = ["All", "Technology", "Environment", "Business"];
+  // Filter blogs based on search query and category
+  useEffect(() => {
+    let filtered = [...blog];
+
+    // Apply category filter
+    // if (activeCategory !== "All") {
+    //   filtered = filtered.filter(bl => 
+    //     bl.category.toLowerCase() === activeCategory.toLowerCase()
+    //   );
+    // }
+
+    // Apply search filter
+    if (searchQuery.trim() !== "") {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(bl => 
+        bl.title.toLowerCase().includes(query) || 
+        bl.description.toLowerCase().includes(query) ||
+        bl.author.toLowerCase().includes(query)
+      );
+    }
+
+    setFilteredBlogs(filtered);
+  }, [blog,searchQuery]);
+
+  // const categories = ["All", "Technology", "Environment", "Business"];
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      // Trigger search
+      setSearchQuery(e.target.value);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -41,42 +83,55 @@ function Blogpost() {
         </p>
         
         {/* Search Bar */}
-        <div className="relative max-w-md mx-auto mb-10">
-          <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          <TextInput
+        <div className="flex items-center justify-center gap-2 max-w-2xl mx-auto mb-10">
+          <div className="relative flex-1">
+            <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <TextInput
+              size="md"
+              radius="xl"
+              id="blog-input"
+              placeholder="Search articles..."
+              value={searchQuery}
+              onChange={handleSearch}
+              onKeyPress={handleKeyPress}
+              className="w-full"
+              styles={{
+                input: {
+                  paddingLeft: '2.5rem',
+                  height: '48px',
+                  border: '1px solid #e2e8f0',
+                  fontSize: '0.95rem',
+                },
+              }}
+            />
+          </div>
+          <Button
             size="md"
             radius="xl"
-            id="blog-input"
-            placeholder="Search articles..."
-            className="w-full"
-            styles={{
-              input: {
-                paddingLeft: '2.5rem',
-                height: '48px',
-                border: '1px solid #e2e8f0',
-                fontSize: '0.95rem',
-              },
-            }}
-          />
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02]"
+            onClick={() => setSearchQuery(searchQuery)}
+          >
+            Search
+          </Button>
         </div>
         
         {/* Categories */}
         <div className="flex justify-center mb-12">
-          <div className="flex space-x-2 p-1 bg-gray-100 rounded-full">
+          {/* <div className="flex space-x-2 p-1 bg-gray-100 rounded-full">
             {categories.map((category) => (
               <button
                 key={category}
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                   activeCategory === category 
                     ? "bg-white text-blue-600 shadow-sm" 
-                    : "text-gray-600 hover:text-gray-900"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
                 }`}
                 onClick={() => setActiveCategory(category)}
               >
                 {category}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
       
@@ -86,9 +141,19 @@ function Blogpost() {
           <div className="flex justify-center items-center py-20">
             <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           </div>
+        ) : filteredBlogs.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">
+              {searchQuery 
+                ? "No articles found matching your search"
+                : activeCategory !== "All"
+                ? `No articles found in ${activeCategory} category`
+                : "No articles found"}
+            </p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 gap-8">
-            {blog.map((bl) => (
+            {filteredBlogs.map((bl) => (
               <Link to={`/post/${bl._id}`} key={bl._id} className="block">
                 <Card 
                   shadow="sm" 

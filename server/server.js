@@ -2,7 +2,7 @@ const  express = require ("express");
 const mongoose = require("mongoose")
 const blogRoutes = require ("./routes/blogroutes.js"); // ✅ Ensure correct path
 const cors = require("cors")
-
+const authRoutes = require("./routes/auth.js");
 const app = express();
 
 app.use(express.json()); // ✅ Middleware for JSON data
@@ -21,7 +21,8 @@ mongoose.connect('mongodb://localhost:27017/blog').then(()=>{
 app.get("/", (req,res)=>{
   res.send("this route is working")
 })
-app.use("/blogs", blogRoutes); // ✅ Correctly use routes
+app.use("/blogs", blogRoutes); 
+app.use("/auth", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

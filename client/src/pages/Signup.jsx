@@ -33,7 +33,7 @@ function Signup() {
       console.log(watch("example"))
     
     
-      fetch("http://localhost:8000/register", {
+      fetch("http://localhost:3000/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Tells the server you're sending JSON
@@ -67,11 +67,11 @@ function Signup() {
 
 
     return (
-        <div className="login">
+        <div className="login h-screen flex justify-center items-center">
             <div className="container">
-                <h1>Sign up</h1>
+                <h1 className='text-xl font-bold'>Sign up</h1>
                 {/* { && <div className="error-message">{error}</div>} */}
-                <div className="error-message">{error}</div>
+                <div className="error-message text-red-500">{error}</div>
                 
                 <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">

@@ -33,7 +33,7 @@ function Login() {
       console.log(watch("example"))
     
     
-      fetch("http://localhost:8000/login", {
+      fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Tells the server you're sending JSON
@@ -44,7 +44,8 @@ function Login() {
           if (response.ok) {
             setIsLoading(false);
             
-            navigate(`/${data.username}/dashboard`);
+            // navigate(`/${data.username}/dashboard`);
+            navigate("/blogs");
             return response.json(); // Parse JSON response
 
 
@@ -68,9 +69,9 @@ function Login() {
 
 
     return (
-        <div className="login">
+        <div className="login  h-screen flex justify-center items-center">
             <div className="container">
-                <h1>Login</h1>
+                <h1 className='text-xl font-bold'>Login</h1>
                 {/* { && <div className="error-message">{error}</div>} */}
                 <div className="error-message">{error}</div>
                 

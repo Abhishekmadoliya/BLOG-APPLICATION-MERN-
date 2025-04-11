@@ -7,7 +7,7 @@ import Signup from "./pages/Signup";
 import Blogpost from "./pages/Blogpost";
 import Newblog from "./pages/Newblog";
 import Blogbyid from "./pages/Blogbyid";
-
+import Navbar from "./components/Navbar";
 
 // import Dashboard from "./components/Dashboard/Dashboard";
 // import Blogform from "./components/Newblog/Blogform.jsx";
@@ -17,6 +17,10 @@ function App() {
   return (
     <div className="">
       {/* <Header /> */}
+      <div className=" mt-5">
+      <Navbar />
+      </div>
+
     
       <main>
         <Routes>
