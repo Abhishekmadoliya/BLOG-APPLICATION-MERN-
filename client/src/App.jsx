@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import BlogData from "./components/Blogdata";
+import BlogData from "./components/BlogData";
 // import Header from "./components/Header";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
