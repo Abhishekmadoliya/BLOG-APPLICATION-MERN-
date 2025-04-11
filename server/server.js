@@ -1,6 +1,6 @@
 const  express = require ("express");
 const mongoose = require("mongoose")
-const blogRoutes = require ("./routes/blogroutes.js"); // ✅ Ensure correct path
+const blogRoutes = require ("./routes/blogroutes"); // ✅ Ensure correct path
 const cors = require("cors")
 const authRoutes = require("./routes/auth.js");
 const app = express();
