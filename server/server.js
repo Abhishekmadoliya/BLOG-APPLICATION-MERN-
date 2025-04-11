@@ -1,6 +1,6 @@
 const  express = require ("express");
 const mongoose = require("mongoose")
-const blogRoutes = require ("./routes/blogroutes"); // ✅ Ensure correct path
+const blogRoutes = require("./routes/blogRoutes.js"); // Fixed capitalization in path
 const cors = require("cors")
 const authRoutes = require("./routes/auth.js");
 const app = express();
@@ -11,16 +11,15 @@ dotenv.config();
 app.use(express.json()); // ✅ Middleware for JSON data
 app.use(cors())
 
+// MongoDB connection with environment variable
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/blog')
+  .then(() => {
+    console.log("DB connected");
+  })
+  .catch((err) => {
+    console.log("Error connecting to database:", err);
+  });
 
-
-
-mongoose.connect('mongodb://localhost:27017/blog').then(()=>{
-  console.log("DB connected");
-  
-}).catch((err)=>{
-  console.log("some problem in db", err);
-  
-})
 app.get("/", (req,res)=>{
   res.send("this route is working")
 })
