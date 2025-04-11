@@ -12,7 +12,7 @@ const Blogbyid = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/blogs/post/${id}`);
+        const response = await axios.get(`https://blog-app-backend-trzs.onrender.com/blogs/post/${id}`);
         setBlogpost(response.data);
         setLoading(false);
       } catch (error) {

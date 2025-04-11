@@ -33,7 +33,7 @@ function Signup() {
       console.log(watch("example"))
     
     
-      fetch("http://localhost:3000/auth/signup", {
+      fetch("https://blog-app-backend-trzs.onrender.com/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Tells the server you're sending JSON

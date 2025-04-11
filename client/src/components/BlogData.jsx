@@ -13,7 +13,7 @@ const Blogdata = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/blogs");
+        const response = await axios.get("https://blog-app-backend-trzs.onrender.com/blogs");
         // Sort blogs by date in descending order (newest first)
         const sortedBlogs = response.data.sort((a, b) => 
           new Date(b.createdAt) - new Date(a.createdAt)

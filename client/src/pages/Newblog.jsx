@@ -29,7 +29,7 @@ const Newblog = () => {
         catagory: data.category
       };
       
-      const response = await axios.post('http://localhost:3000/blogs/create', blogData);
+      const response = await axios.post('https://blog-app-backend-trzs.onrender.com/blogs/create', blogData);
       console.log('Form submitted successfully:', response.data);
       setSubmitSuccess(true);
       

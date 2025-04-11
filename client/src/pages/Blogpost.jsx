@@ -16,7 +16,7 @@ function Blogpost() {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3000/blogs/");
+        const response = await axios.get("https://blog-app-backend-trzs.onrender.com/blogs/");
         const sortedBlogs = response.data.sort((a, b) => 
           new Date(b.createdAt) - new Date(a.createdAt)
         );
