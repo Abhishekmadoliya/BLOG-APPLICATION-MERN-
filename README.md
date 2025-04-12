@@ -1,10 +1,10 @@
 Here is a suggested `README.md` file for your **Blog Application (MERN)** project:
 
+view live here: https://blog-application-mern-ma2s.vercel.app/
 ```markdown
 # Blog Application (MERN)
 
 Welcome to the **Blog Application** repository! This project is a web-based platform designed for creating, managing, and viewing blog posts. Built using the MERN (MongoDB, Express.js, React.js, Node.js) stack, the application provides a seamless user experience for both readers and content creators.
-view live here: https://blog-application-mern-ma2s.vercel.app/
 ---
 
 ## Features
