@@ -5,8 +5,8 @@ import BlogData from "./components/BlogData";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Blogpost from "./pages/BlogPost";
-import NewBlog from "./pages/NewBlog";
-import BlogbyId from "./pages/BlogbyId";
+import Newblog from "./pages/NewBlog";
+import Blogbyid from "./pages/BlogbyId";
 import Navbar from "./components/Navbar";
 
 
@@ -19,14 +19,14 @@ function App() {
       </div>
 
     
-      <main className=" mt-15">
+      <main className="container mx-auto px-4 pt-24 pb-12">
         <Routes>
           <Route path="/" element={<BlogData />} />
-          <Route path="/new" element={<NewBlog />} />
+          <Route path="/new" element={<Newblog />} />
           <Route path="/blogs" element={<Blogpost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
-          <Route path="/post/:id" element={<BlogbyId />} />
+          <Route path="/post/:id" element={<Blogbyid />} />
           {/* Catch all route for 404 */}
           <Route path="*" element={
             <div className="min-h-[60vh] flex items-center justify-center">
