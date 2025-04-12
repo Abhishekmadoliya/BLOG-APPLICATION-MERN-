@@ -3,9 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiSearch, FiBookmark } from 'react-icons/fi';
-import "./Blogpost.css";
 
-function Blogpost() {
+function BlogPost() {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
   // const [activeCategory, setActiveCategory] = useState("All");
@@ -108,7 +107,7 @@ function Blogpost() {
           <Button
             size="md"
             radius="xl"
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02]"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02] p-2 rounded-sm text-white hover:text-black hover:bg-white hover:cursor-pointer"
             onClick={() => setSearchQuery(searchQuery)}
           >
             Search
@@ -143,13 +142,11 @@ function Blogpost() {
           </div>
         ) : filteredBlogs.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
-              {searchQuery 
-                ? "No articles found matching your search"
-                : activeCategory !== "All"
-                ? `No articles found in ${activeCategory} category`
-                : "No articles found"}
-            </p>
+            <h1 className="text-4xl font-bold mb-4">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                No articles found matching your search
+              </span>
+            </h1>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-8">
@@ -231,4 +228,4 @@ function Blogpost() {
   );
 }
 
-export default Blogpost;
+export default BlogPost;

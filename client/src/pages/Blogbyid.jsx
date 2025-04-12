@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const Blogbyid = () => {
+const BlogbyId = () => {
   const [blogpost, setBlogpost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -150,4 +150,4 @@ const Blogbyid = () => {
   );
 };
 
-export default Blogbyid;
+export default BlogbyId;
